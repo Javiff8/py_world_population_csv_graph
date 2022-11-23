@@ -1,6 +1,8 @@
 import csv
 import sys
 import os
+import charts
+import utils
 
 def read_csv(path):
 	with open(path, 'r') as csvfile:
@@ -19,6 +21,8 @@ if __name__ == "__main__":
 		path = input("Indicate the path to the csv file you want to read --> ")
 	if os.path.exists(path):
 		data = read_csv(path)
-		print(data)
+		country = utils.get_population_by_country(data, "Argentina", "Country/Territory")
+		country = utils.get_population_by_year(country[0])
+		print(country)
 	else:
 		print("Invalid path, run the script again and input a valid path")
