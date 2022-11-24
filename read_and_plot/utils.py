@@ -8,3 +8,4 @@ def format_data(country):
 def get_population_by_country(data, country):
 	result = list(filter(lambda item: item["Country/Territory"] == country, data))
 	return result
+
